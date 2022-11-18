@@ -21,14 +21,24 @@ app.get("/pokemon", (req, res) => {
 });
 
 // New - GET /pokemon/new
+app.get("/pokemon/new", (req, res) => {
+  res.render("new.ejs");
+});
 
 // Create - POST /pokemon
+app.post("/pokemon", (req, res) => {
+  Pokemon.push(req.body);
+  res.redirect("/pokemon");
+  console.log(req.body);
+});
 
 // Destroy - DELETE /pokemon/:id
 
 // Show - GET /pokemon/:id
 app.get("/pokemon/:id", (req, res) => {
-  res.render("show.ejs", { data: Pokemon[req.params.id] });
+  res.render("show.ejs", {
+    data: Pokemon[req.params.id],
+  });
 });
 
 // Edit - GET /pokemon/:id/edit

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Create New Pokemon</h1>
+    <!--  NOTE: action will be the route, method will be the HTTP verb-->
+    <!-- This is how the form knows where to send the new data -->
+    <form action="/pokemon" method="POST">
+      Name: <input type="text" name="name" placeholder="Name" /><br />
+      Image Address:
+      <input type="text" name="img" placeholder="Image URL" /><br />
+      Type(s): <input type="text" name="type" placeholder="Type(s)" /><br />
+      HP: <input type="text" name="stats[hp]" placeholder="HP" /><br />
+      Attack:
+      <input type="text" name="stats[attack]" placeholder="Attack" /><br />
+      Defense:
+      <input type="text" name="stats[defense]" placeholder="Defense" /><br />
+      <input type="submit" value="Add New Pokemon" />
+    </form>
+  </body>
+</html>

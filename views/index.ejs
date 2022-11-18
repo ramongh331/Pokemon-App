@@ -8,23 +8,18 @@
     <title>Index of Pokemon</title>
   </head>
   <body>
-    <div class="border">
-      <div class="metalBG"></div>
+    <div class="cardBorder">
+      <div class="Info"></div>
     </div>
-
+    <a href="http://localhost:3003/pokemon/new"
+      ><button>Add New Pokemon</button></a
+    >
     <div class="container">
       <% for(let i = 0; i < data.length; i+=1){ %>
       <h2><%=data[i].name %></h2>
-      <img src="<%=data[i].img %> " alt="Image Not Found" />
-      <ul>
-        <% const type = data[i].type %> <% for(let j = 0; j < type.length;
-        j+=1){ %>
-        <li><%=type[j] %></li>
-        <% } %>
-      </ul>
-      <h3>HP: <%=data[i].stats.hp %></h3>
-      <h3>Attack: <%=data[i].stats.attack %></h3>
-      <h3>Defense: <%=data[i].stats.defense %></h3>
+      <a href="http://localhost:3003/pokemon/<%=i %> "
+        ><img src="<%=data[i].img %> " alt="Picture of <%=data[i].name %>"
+      /></a>
       <% } %>
     </div>
   </body>
