@@ -7,8 +7,11 @@
     <form action="/pokemon" method="POST">
       Name: <input type="text" name="name" placeholder="Name" /><br />
       Image Address:
-      <input type="text" name="img" placeholder="Image URL" /><br />
-      Type(s): <input type="text" name="type" placeholder="Type(s)" /><br />
+      <!-- <input type="file" name="img" accept="image/*" /><br /> -->
+      <input type="text" name="img" /><br />
+      Type(s):
+      <input type="text" name="type[]" placeholder="Type(s)" /><br />
+      <!-- I cannot figure out how to be able to have the user input more than one type without it going on the same line. I tried adding a for loop in between the brackets but I just get errors. -->
       HP: <input type="text" name="stats[hp]" placeholder="HP" /><br />
       Attack:
       <input type="text" name="stats[attack]" placeholder="Attack" /><br />
