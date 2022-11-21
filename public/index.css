@@ -1,0 +1,51 @@
+body{
+  background-color: lightblue;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2{
+  margin: 5px;
+}
+
+button {
+  background-color: rgb(253, 226, 99);
+  border: none;
+  font-size: larger;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: rgb(255, 208, 0);
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pokeSelection {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 3px solid black;
+  margin: 5px;
+  width: 230px;
+  height: 410px;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.pokeSelection img {
+  max-height: 330px;
+  
+}
+
+input.trashCan {
+  width: 30px;
+  position: relative;
+  bottom: 0px;
+}

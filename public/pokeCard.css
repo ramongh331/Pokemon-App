@@ -1,25 +1,43 @@
 body {
   margin: 20px;
+  background-image: url("https://i.imgur.com/0wYw4qQ.png");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+}
+
+.container {
+
+  width: 30%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cardBox {
-  display: flex;
-  flex-direction: column;
+  transform-style: preserve-3d;
   align-items: center;
   width: 20rem;
   height: 35rem;
   border: 10px solid rgb(253, 226, 99);
-  /* background-image: linear-gradient(
-    45.34deg,
-    rgb(111, 190, 77) 5.66%,
-    rgb(197, 216, 60) 94.35%
-  ); */
   border-radius: 2%;
   padding-bottom: 5px;
-  margin: 0 auto;
+  margin: 10px auto;
+  box-shadow: 10px 10px 10px 5px rgba(0,0,0,0.6);
+}
+
+h2{
+  margin-left: 10px;
+}
+
+ul{
+  display: flex;
+  justify-content: space-evenly;
+ padding-left: 0px;
 }
 
 .pokemonImg {
+  display: block;
   width: 85%;
   border-width: 3px;
   border-style: solid;
@@ -29,6 +47,8 @@ body {
     rgb(240, 237, 240)
   );
   border-image-slice: 1;
+  margin: 0 auto;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
 }
 
 .stats {
@@ -42,4 +62,15 @@ body {
 
 .types ul li {
   list-style: none;
+}
+
+button {
+  background-color: rgb(253, 226, 99);
+  border: none;
+  font-size: larger;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: rgb(255, 208, 0);
 }
