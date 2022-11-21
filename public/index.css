@@ -1,9 +1,18 @@
 body{
   background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
   text-align: center;
+  font-family: 'Pokemon Solid', sans-serif;
+  letter-spacing: 3px;
+  font-size: 40px;
+  color: rgb(253, 226, 99);
+  -webkit-text-stroke: 1px rgb(42, 42, 255);
+  margin-bottom: 10px;
 }
 
 h2{
@@ -15,6 +24,7 @@ button {
   border: none;
   font-size: larger;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
 button:hover {
@@ -30,13 +40,33 @@ button:hover {
 .pokeSelection {
   display: flex;
   flex-direction: column;
-  background-color: white;
   border: 3px solid black;
   margin: 5px;
   width: 230px;
   height: 410px;
   padding: 10px;
   border-radius: 30px;
+  /* Background Trnasition */
+  background:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgb(253, 226, 99),
+      rgb(253, 226, 99)
+  );
+  background-size: 100% 100%, 100% 100%;
+  background-position: 100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.pokeSelection:hover{
+/* Background Transition on Hover */
+background-size: 0 100%, 100% 100%;
 }
 
 .pokeSelection img {
@@ -46,6 +76,5 @@ button:hover {
 
 input.trashCan {
   width: 30px;
-  position: relative;
-  bottom: 0px;
+  margin-top: auto;
 }
