@@ -1,23 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/new.css" />
+    <%- include('partials/css-font.ejs') %>
+    <title>New Pokemon</title>
+  </head>
   <body>
     <h1>Create New Pokemon</h1>
     <!--  NOTE: action will be the route, method will be the HTTP verb-->
     <!-- This is how the form knows where to send the new data -->
     <form action="/pokemon" method="POST">
-      Name: <input type="text" name="name" placeholder="Name" /><br />
-      Image Address:
-      <!-- <input type="file" name="img" accept="image/*" /><br /> -->
-      <input type="text" name="img" /><br />
-      Type(s):
-      <input type="text" name="type[]" placeholder="Type(s)" /><br />
-      <!-- I cannot figure out how to be able to have the user input more than one type without it going on the same line. I tried adding a for loop in between the brackets but I just get errors. -->
-      HP: <input type="text" name="stats[hp]" placeholder="HP" /><br />
-      Attack:
-      <input type="text" name="stats[attack]" placeholder="Attack" /><br />
-      Defense:
-      <input type="text" name="stats[defense]" placeholder="Defense" /><br />
-      <input type="submit" value="Add New Pokemon" />
+      <div class="inputs">
+        Name: <input type="text" name="name" placeholder="Name" /><br />
+        Image Address:
+        <select id="pokePics" name="img">
+          <% for(let i = 0; i < data.length; i+=1){ %> 
+          <option value="<%=data[i].img %> "><%=data[i].name %> </option>
+          <% } %> 
+        </select><br/>
+        Type(s):
+        <select id="pokeTypes" name="type[]" size="4" multiple>
+          <option value="Normal">Normal</option>
+          <option value="Fire">Fire</option>
+          <option value="Water">Water</option>
+          <option value="Grass">Grass</option>
+          <option value="Bug">Bug</option>
+          <option value="Poison">Poison</option>
+          <option value="Psychic">Psychic</option>
+          <option value="Electric">Electric</option>
+          <option value="Ground">Ground</option>
+          <option value="Fighting">Fighting</option>
+          <option value="Dragon">Dragon</option>
+        </select>
+        <p>Hold down the Ctrl (windows) / Cmd (Mac) button to select multiple options.</p>
+        <!-- By adding multiple in the select tag it allows a user to click all and my Show Page cannot contain all of the types. I did not have time to adjust for that. -->
+        <br/>
+        Hit Points: <input type="text" name="stats[hp]" placeholder="Hit Points" /><br />
+        Attack:
+        <input type="text" name="stats[attack]" placeholder="Attack" /><br />
+        Defense:
+        <input type="text" name="stats[defense]" placeholder="Defense" /><br />
+
+        <input type="submit" value="Add New Pokemon" />
+      </div>
     </form>
   </body>
 </html>

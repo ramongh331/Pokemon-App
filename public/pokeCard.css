@@ -12,6 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .cardBox {
@@ -24,6 +25,7 @@ body {
   padding-bottom: 5px;
   margin: 10px auto;
   box-shadow: 10px 10px 10px 5px rgba(0,0,0,0.6);
+  
 }
 
 h2{
@@ -62,6 +64,9 @@ ul{
 
 .types ul li {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 button {
