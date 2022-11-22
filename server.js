@@ -13,11 +13,6 @@ app.use("/static", express.static("public"));
 
 app.use(methodOverride("_method")); // swap the method if the url has a ?_method=XXX query
 
-// Landing - GET /
-app.get("/", (req, res) => {
-  res.render("landing.ejs");
-});
-
 // Index - GET /pokemon
 app.get("/pokemon", (req, res) => {
   res.render("index.ejs", { data: Pokemon });

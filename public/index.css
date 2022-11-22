@@ -17,6 +17,12 @@ h1 {
 
 h2{
   margin: 5px;
+  color: black;
+  
+}
+
+a{
+  text-decoration: none;
 }
 
 button {
