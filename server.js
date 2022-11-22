@@ -57,6 +57,7 @@ app.get("/pokemon/:id", (req, res) => {
 app.get("/pokemon/:id/edit", (req, res) => {
   // render edit.ejs with the existing fruits data
   res.render("edit.ejs", {
+    data1: Pokemon,
     data: Pokemon[req.params.id],
     index: req.params.id,
   });

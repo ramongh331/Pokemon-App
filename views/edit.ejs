@@ -1,20 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/edit.css" />
+    <%- include('partials/css-font.ejs') %>
+  <title>Edit Pokemon</title>
+</head>
   <body>
     <h1>Edit <%=data.name %></h1>
     <!--  NOTE: action will be the route, method will be the HTTP verb-->
     <!-- This is how the form knows where to send the new data -->
     <form action="/pokemon/<%=index %>?_method=PUT" method="POST">
-      Name: <input type="text" name="name" placeholder="Name" /><br />
-      Image Address:
-      <input type="text" name="img" placeholder="Image URL" /><br />
-      Type(s): <input type="text" name="type[]" placeholder="Type(s)" /><br />
-      HP: <input type="text" name="stats[hp]" placeholder="HP" /><br />
-      Attack:
-      <input type="text" name="stats[attack]" placeholder="Attack" /><br />
-      Defense:
-      <input type="text" name="stats[defense]" placeholder="Defense" /><br />
-      <input type="submit" value="Update Pokemon" />
+      <div class="inputs">
+        Name: <input type="text" name="name" value="<%=data.name %> "/><br />
+        Image:
+        <select id="pokePics" name="img">
+          <% for(let i = 0; i < data1.length; i+=1){ %> 
+          <option value="<%=data1[i].img %> "><%=data1[i].name %> </option>
+          <% } %> 
+        </select><br/>
+        Type(s):
+        <select id="pokeTypes" name="type[]" size="4" multiple>
+          <option value="Normal">Normal</option>
+          <option value="Fire">Fire</option>
+          <option value="Water">Water</option>
+          <option value="Grass">Grass</option>
+          <option value="Bug">Bug</option>
+          <option value="Poison">Poison</option>
+          <option value="Psychic">Psychic</option>
+          <option value="Electric">Electric</option>
+          <option value="Ground">Ground</option>
+          <option value="Fighting">Fighting</option>
+          <option value="Dragon">Dragon</option>
+        </select>
+        <p>Current Type(s): <%=data.type %> </p>
+        <p>Hold down the Ctrl (windows) / Cmd (Mac) button to select multiple options.</p>
+        <!-- By adding multiple in the select tag it allows a user to click all and my Show Page cannot contain all of the types. I did not have time to adjust for that. -->
+        <br/>
+        Hit Points: <input type="text" name="stats[hp]" value="<%=data.stats.hp %> " /><br />
+        Attack:
+        <input type="text" name="stats[attack]" value="<%=data.stats.attack %> " /><br />
+        Defense:
+        <input type="text" name="stats[defense]" value="<%=data.stats.defense %> " /><br />
+
+        <input type="submit" value="Update Pokemon" />
+      </div>
     </form>
   </body>
 </html>

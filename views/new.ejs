@@ -14,8 +14,8 @@
     <!-- This is how the form knows where to send the new data -->
     <form action="/pokemon" method="POST">
       <div class="inputs">
-        Name: <input type="text" name="name" placeholder="Name" /><br />
-        Image Address:
+        Name: <input type="text" name="name" placeholder="Name"/><br />
+        Image:
         <select id="pokePics" name="img">
           <% for(let i = 0; i < data.length; i+=1){ %> 
           <option value="<%=data[i].img %> "><%=data[i].name %> </option>
