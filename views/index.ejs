@@ -10,12 +10,12 @@
   </head>
   <body>
     <h1>Select a Pokemon</h1>
-    <a href="http://localhost:3003/pokemon/new"
+    <a href="https://pokemon-cards.onrender.com/pokemon/new"
       ><button>Add New Pokemon</button></a
     >
     <div class="container">
       <% for(let i = 0; i < data.length; i+=1){ %>
-      <a href="http://localhost:3003/pokemon/<%=i %> "
+      <a href="https://pokemon-cards.onrender.com/pokemon/<%=i %> "
           ><div class="pokeSelection">
         <h2><%=data[i].name %></h2>
         <img src="<%=data[i].img %>" alt="Picture of <%=data[i].name %>"
